@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Voucher Generator</title>
+  <link rel="stylesheet" href="voucher.css">
+  <script src="voucher.js" defer></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/docx@9.4.1/dist/index.iife.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li><a href="../billing/billing.html">Billing</a></li>
+      <li><a href="voucher.html">Voucher</a></li>
+    </ul>
+  </nav>
+  <hr>
+  <h1>Voucher Generator</h1>
+
+  <div id="voucherForm" class="box">
+    <label for="customerName" class="text">Name:</label>
+    <input type="text" id="customerName" class="inputField"><br>
+
+    <label for="voucherNum" class="text">Voucher No.:</label>
+    <input type="number" id="voucherNum" class="inputField"><br>
+
+    <label for="voucherDate" class="text">Date of Issue:</label>
+    <input type="date" id="voucherDate" class="inputField"><br>
+
+    <label for="destination">Destination: </label>
+    <input type="text" id="destination" class="inputField"><br>
+
+    <label for="travelDate">Date of Travel: </label>
+    <input type="date" id="travelDate" class="inputField"><br>
+
+    <label for="hotelName" class="text">Hotel:</label>
+    <input type="text" id="hotelName" class="inputField"><br>
+
+    <label for="hotelConf" class="text">Hotel Confirmation No.:</label>
+    <input type="tel" id="hotelConf" class="inputField"><br>
+
+    <label for="hotelAddress">Hotel Address</label>
+    <input type="text" id="hotelAddress" class="inputField"><br>
+
+    <label for="rooms" class="text">Rooms:</label> 
+    <input type="text" id="rooms" class="inputField"><br>
+  </div>
+
+  <div>
+    <label for="passengerNames" class="text">Names List:</label>
+    <textarea id="passengerNames" rows="5" cols="50" placeholder="Description" class="inputField"></textarea>
+  </div>
+
+  <div id="flightContainer" class="box">
+    <label for="flightNum1" class="text">Flight No.: </label>
+    <input type="text" placeholder="Flight No." id="flightNum1" class="inputField">
+
+    <label for="departureDate1" class="text">Departure Date: </label>
+    <input type="date" id="departureDate1" class="inputField">
+
+    <label for="departureTime1" class="text">Departure Time: </label>
+    <input type="time" id="departureTime1" class="inputField">
+
+    <label for="arrivalDate1" class="text">Arrival Date: </label>
+    <input type="date" id="arrivalDate1" class="inputField">
+    
+    <label for="arrivalTime1" class="text">Arrival Time: </label>
+    <input type="time" id="arrivalTime1" class="inputField"><br>
+  </div>
+
+  <button id="addFlight" class="btn">Add Flight</button>
+
+  <div id="itineraryContainer" class="box">
+    <h3>Day 1</h3>
+
+    <label for="flightCode1" class="text">Flight Code: </label>
+    <input type="text" placeholder="Flight Code" id="flightCode1" class="inputField">
+
+    <label for="itiHotel1" class="text">Hotel: </label>
+    <input type="text" placeholder="Hotel" id="itiHotel1" class="inputField">
+
+    <label for="bf1" class="text">Breakfast</label>
+    <input type="checkbox" id="bf1" class="checkbox">
+
+    <label for="l1" class="text">Lunch</label>
+    <input type="checkbox" id="l1" class="checkbox">
+
+    <label for="d1" class="text">Dinner</label>
+    <input type="checkbox" id="d1" class="checkbox"><br>
+
+    <label for="desc1" class="text">Description: </label>
+    <textarea id="desc1" rows="5" cols="50" placeholder="Description" class="inputField"></textarea><br>
+  </div>
+
+  <button id="addItinerary" class="btn">Add Itinerary</button><br>
+
+  <div id="scopeOfWork" class="box">
+    <h2>Scope of Work</h2>
+
+    <label for="incDesc" class="text">Inclusions: </label>
+    <textarea id="incDesc" rows="5" cols="50" placeholder="Description" class="inputField"></textarea><br>
+
+    <label for="excDesc" class="text">Exclusions: </label>
+    <textarea id="excDesc" rows="5" cols="50" placeholder="Description" class="inputField"></textarea><br>
+
+    <label for="arrIns" class="text">Arrival Instructions: </label>
+    <textarea id="arrIns" rows="5" cols="50" placeholder="Description" class="inputField"></textarea><br>
+
+    <label for="rem" class="text">Remarks: </label>
+    <textarea id="rem" rows="5" cols="50" placeholder="Description" class="inputField"></textarea><br>
+  </div>
+
+  <button id="submitVoucher" class="btn" onclick="generateVoucher()">Generate Voucher</button>
+
+  <div id="voucherOutput" class="box">
+    <p id="voucherContent"></p>
+  </div>
+
+</body>
+</html>

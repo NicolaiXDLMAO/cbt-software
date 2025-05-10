@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CBT Billing Generator</title>
+  <link rel="stylesheet" href="billing.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/docx@9.4.1/dist/index.iife.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-list">
+          <li><a href="billing.html">Billing</a></li>
+          <li><a href="../voucher/voucher.html">Voucher</a></li>
+        </ul>
+    </nav>
+    <hr>
+  <h1>Billing Generator</h1>
+
+  <div id="billingForm" class="box">
+    <label for="customerName" class="text">Name:</label>
+    <input type="text" id="customerName" class="inputField"><br>
+
+    <label for="customerAttention" class="text">Customer Attention:</label>
+    <input type="text" id="customerAttention" class="inputField"><br>
+
+    <label for="billingNum" class="text">Voucher No.:</label>
+    <input type="number" id="billingNum" class="inputField"><br>
+
+    <label for="billingDate" class="text">Date of Issue:</label>
+    <input type="date" id="billingDate" class="inputField"><br>
+
+    <label for="tinNum" class="text">TIN Number: </label>
+    <input type="text" id="tinNum" class="inputField"><br>
+
+    <label for="payDeadline" class="text">Deadline of Payment: </label>\
+    <input type="date" id="payDeadline" class="inputField"><br>
+
+    <label for="payMethod" class="text">Payment Method: </label>
+    <select id="payMethod" class="inputField">
+      <option value="Partial Payment">Partial Payment</option>
+      <option value="Full Payment">Full Payment</option>
+    </select><br>
+  </div>
+
+  <h3>Item Description</h3>
+
+  <section id="itemSection" class="box">
+    <div id="itemContainer" class="box"> 
+        <h3>Item 1</h3>
+    
+        <label for="itemDesc1" class="text">Item: </label>
+        <input type="text" id="itemDesc1" class="inputField"><br><br>
+    
+        <label for="itemQty1" class="text">Quantity: </label>
+        <input type="number" id="itemQty1" class="inputField"><br>
+    
+        <label for="itemPrice1" class="text">Price: </label>
+        <input type="number" id="itemPrice1" class="inputField"><br>
+    
+        <label for="currency1" class="text">Currency: </label>
+        <select id="currency1" class="inputField">
+          <option value="USD">USD</option>
+          <option value="PHP">PHP</option>
+        </select><br>
+      </div>
+  </section>
+
+
+  <button id="addItem" type="button" class="btn">Add Item</button>
+
+  <div id="bankInfo" class="box">
+    <h2>Bank details</h2>
+    <textarea id="bankDesc" rows="5" cols="50" placeholder="Description" class="inputField"></textarea><br>
+  </div>
+
+  <button id="submitBilling" class="btn">Generate Billing</button>
+</body>
+<script src="billing.js" defer></script>
+</html>
