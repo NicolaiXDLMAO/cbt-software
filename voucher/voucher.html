@@ -50,49 +50,59 @@
 
   <div>
     <label for="passengerNames" class="text">Names List:</label>
-    <textarea id="passengerNames" rows="5" cols="50" placeholder="Description" class="inputField"></textarea>
+    <textarea id="passengerNames" rows="5" cols="50" placeholder="Names of Passengers..." class="inputField"></textarea>
+    <br>
   </div>
 
-  <div id="flightContainer" class="box">
-    <label for="flightNum1" class="text">Flight No.: </label>
-    <input type="text" placeholder="Flight No." id="flightNum1" class="inputField">
+  <section id="flightSection" class="box">
+    <h2>Flight Details</h2>
 
-    <label for="departureDate1" class="text">Departure Date: </label>
-    <input type="date" id="departureDate1" class="inputField">
+    <div class="box">
+      <label for="flightNum1" class="text">Flight No.: </label>
+      <input type="text" placeholder="Flight No." id="flightNum1" class="inputField">
+      <br>
+      <label for="departureDate1" class="text">Departure Date: </label>
+      <input type="date" id="departureDate1" class="inputField">
 
-    <label for="departureTime1" class="text">Departure Time: </label>
-    <input type="time" id="departureTime1" class="inputField">
-
-    <label for="arrivalDate1" class="text">Arrival Date: </label>
-    <input type="date" id="arrivalDate1" class="inputField">
+      <label for="departureTime1" class="text">Departure Time: </label>
+      <input type="time" id="departureTime1" class="inputField">
+      <br>
+      <label for="arrivalDate1" class="text">Arrival Date: </label>
+      <input type="date" id="arrivalDate1" class="inputField">
     
-    <label for="arrivalTime1" class="text">Arrival Time: </label>
-    <input type="time" id="arrivalTime1" class="inputField"><br>
-  </div>
+      <label for="arrivalTime1" class="text">Arrival Time: </label>
+      <input type="time" id="arrivalTime1" class="inputField">
+      <br>
+      <br>
+    </div>
+  </section>
 
   <button id="addFlight" class="btn">Add Flight</button>
 
-  <div id="itineraryContainer" class="box">
-    <h3>Day 1</h3>
+  <section id="itinerarySection">
+    <div class="box">
+      <h3>Day 1</h3>
 
-    <label for="flightCode1" class="text">Flight Code: </label>
-    <input type="text" placeholder="Flight Code" id="flightCode1" class="inputField">
+      <label for="itiCity1" class="text">City: </label>
+      <input type="text" placeholder="City" id="itiCity1" class="inputField">
 
-    <label for="itiHotel1" class="text">Hotel: </label>
-    <input type="text" placeholder="Hotel" id="itiHotel1" class="inputField">
+      <label for="itiHotel1" class="text">Hotel: </label>
+      <input type="text" placeholder="Hotel" id="itiHotel1" class="inputField">
 
-    <label for="bf1" class="text">Breakfast</label>
-    <input type="checkbox" id="bf1" class="checkbox">
+      <label for="bf1" class="text">Breakfast</label>
+      <input type="checkbox" id="bf1" class="checkbox">
 
-    <label for="l1" class="text">Lunch</label>
-    <input type="checkbox" id="l1" class="checkbox">
+      <label for="l1" class="text">Lunch</label>
+      <input type="checkbox" id="l1" class="checkbox">
 
-    <label for="d1" class="text">Dinner</label>
-    <input type="checkbox" id="d1" class="checkbox"><br>
-
-    <label for="desc1" class="text">Description: </label>
-    <textarea id="desc1" rows="5" cols="50" placeholder="Description" class="inputField"></textarea><br>
-  </div>
+      <label for="d1" class="text">Dinner</label>
+      <input type="checkbox" id="d1" class="checkbox">
+      <br>
+      <label for="desc1" class="text">Description: </label>
+      <textarea id="desc1" rows="5" cols="50" placeholder="Itinerary..." class="inputField"></textarea>
+      <br>
+    </div>
+  </section>
 
   <button id="addItinerary" class="btn">Add Itinerary</button><br>
 
@@ -112,7 +122,7 @@
     <textarea id="rem" rows="5" cols="50" placeholder="Description" class="inputField"></textarea><br>
   </div>
 
-  <button id="submitVoucher" class="btn" onclick="generateVoucher()">Generate Voucher</button>
+  <button id="submitVoucher" class="btn">Generate Voucher</button>
 
   <div id="voucherOutput" class="box">
     <p id="voucherContent"></p>
